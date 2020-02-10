@@ -8,14 +8,16 @@
 
 <script lang="ts">
     import {Component, Vue, Watch} from 'vue-property-decorator';
+    import { Utils } from '@/utils';
 
-    const defaultLayout = 'default';
+    const utils = new Utils();
 
     @Component
     export default class App extends Vue {
 
         get layout() {
-            return ((this.$route.meta as any).layout || defaultLayout) + '-layout';
+            const layout = utils.getLayout(this.$router);
+            return ((this.$route.meta as any).layout || layout) + '-layout';
         }
     }
 </script>

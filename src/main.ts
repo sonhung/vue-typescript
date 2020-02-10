@@ -8,6 +8,7 @@ import VueAxios from 'vue-axios';
 import Element from 'element-ui';
 import Component from 'vue-class-component';
 import DefaultLayout from '@/layouts/DefaultLayout.vue';
+import SecondLayout from '@/layouts/SecondLayout.vue';
 // element-ui locale
 import locale from 'element-ui/lib/locale/lang/en';
 // font-awesome-icon
@@ -33,6 +34,7 @@ Component.registerHooks([
 
 // Layout-init
 Vue.component('default-layout', DefaultLayout);
+Vue.component('second-layout', SecondLayout);
 
 Vue.config.productionTip = false;
 

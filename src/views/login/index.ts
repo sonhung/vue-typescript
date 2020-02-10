@@ -15,6 +15,15 @@ export default class Login extends Vue {
     @Action(USER.USER_LOGIN, { namespace }) public userLogin: any;
     @State('user') public userInfo: any;
     public user: object = { name: '', password: '' };
+    get layout() {
+        return 'second-layout';
+    }
+
+    mounted() {
+        if (localStorage.getItem('token')) {
+            router.push('/');
+        }
+    }
 
     public submitLogin() {
         this.userLogin(this.user);
