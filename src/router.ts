@@ -26,8 +26,8 @@ const router = new Router({
     {
       path: '*',
       name: 'NotFound',
-      component: NotFound
-    }
+      component: NotFound,
+    },
   ],
 });
 
@@ -42,6 +42,6 @@ router.beforeEach((to, from, next) => {
   // }
 
   next();
-})
+});
 
 export default router;

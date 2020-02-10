@@ -1,38 +1,38 @@
-import Vue from "vue";
+import Vue from 'vue';
 import Vuex, {
     ActionTree,
     GetterTree,
     Module,
     ModuleTree,
     MutationTree,
-    Store
-} from "vuex";
-import { UserState, IUserState } from "./user/state";
-import userActions from "./user/actions";
-import userGetters from "./user/getters";
-import userMutations from "./user/mutations";
-import { namespace } from "vuex-class";
+    Store,
+} from 'vuex';
+import { UserState, IUserState } from './user/state';
+import userActions from './user/actions';
+import userGetters from './user/getters';
+import userMutations from './user/mutations';
+import { namespace } from 'vuex-class';
 
 Vue.use(Vuex);
 
 export class UserModule implements Module<IUserState, IRootState> {
-    namespaced?: boolean;
-    state?: IUserState;
-    getters?: GetterTree<IUserState, IRootState>;
-    mutations?: MutationTree<IUserState>;
-    actions?: ActionTree<IUserState, IRootState>;
+    public namespaced?: boolean;
+    public state?: IUserState;
+    public getters?: GetterTree<IUserState, IRootState>;
+    public mutations?: MutationTree<IUserState>;
+    public actions?: ActionTree<IUserState, IRootState>;
 
     constructor() {
         this.namespaced = true;
         this.state = new UserState();
         this.actions = {
-            ...userActions
+            ...userActions,
         };
         this.getters = {
-            ...userGetters
+            ...userGetters,
         };
         this.mutations = {
-            ...userMutations
+            ...userMutations,
         };
     }
 }
@@ -47,9 +47,9 @@ export const store: Store<IRootState> = new Store<IRootState>({
     modules: {
         user: new UserModule(),
     } as ModuleTree<IRootState>,
-    plugins: []
+    plugins: [],
 });
 
-export const userModule = namespace("user");
+export const userModule = namespace('user');
 
 export { store as default };

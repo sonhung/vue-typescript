@@ -4,7 +4,7 @@ import { isEmpty } from 'lodash';
 
 import ExampleComponent from '@/components/ExampleComponent.vue';
 import { USER } from '@/store/type';
-import router from "@/router";
+import router from '@/router';
 const namespace: string = 'user';
 
 @Component({
@@ -12,15 +12,15 @@ const namespace: string = 'user';
     components: { ExampleComponent },
 })
 export default class Login extends Vue {
-    @Action(USER.USER_LOGIN, { namespace }) userLogin: any;
-    @State('user') userInfo: any;
+    @Action(USER.USER_LOGIN, { namespace }) public userLogin: any;
+    @State('user') public userInfo: any;
     public user: object = { name: '', password: '' };
 
-    submitLogin() {
+    public submitLogin() {
         this.userLogin(this.user);
         const { user: { name = '' } = {} } = this.userInfo;
-        if (!isEmpty(name)) router.push('/');
+        if (!isEmpty(name)) {
+            router.push('/');
+        }
     }
-
-
 }

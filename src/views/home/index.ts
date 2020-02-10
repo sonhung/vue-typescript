@@ -1,15 +1,15 @@
-import {Component, Vue} from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import { State } from 'vuex-class';
 import ExampleComponent from '@/components/ExampleComponent.vue';
 
 @Component({
     name: 'home',
-    components: {ExampleComponent},
+    components: { ExampleComponent },
 })
 export default class Home extends Vue {
-    @State('user') userInfo: any;
+    @State('user') public userInfo: any;
 
-    mounted(){
-        console.log('this.userData', this.userInfo)
+    mounted() {
+        console.log('this.userData', this.userInfo);
     }
 }

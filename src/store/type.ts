@@ -6,7 +6,7 @@ export const USER = {
     CHECK: 'userCheck',
     USER_LOGIN: 'userLogin',
     LOGIN_SUCCESS: 'loginSuccess',
-    IS_LOGIN: 'isLogin'
+    IS_LOGIN: 'isLogin',
 };
 
 export const userNameSpace = namespace('user');
