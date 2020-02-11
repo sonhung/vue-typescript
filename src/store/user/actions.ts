@@ -19,6 +19,12 @@ const userActions: ActionTree<IUserState, IRootState> = {
             }
         });
     },
+
+    [USER.USER_LOGOUT](): any {
+        userService.logout();
+        localStorage.removeItem('token');
+        router.push('/login');
+    },
 };
 
 export default userActions;

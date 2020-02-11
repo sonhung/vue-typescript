@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h1>login page ne</h1>
+		<div>login page ne</div>
 		<input v-model="user.name"/>
 		<input v-model="user.password"/>
 		<button @click="submitLogin">Login</button>

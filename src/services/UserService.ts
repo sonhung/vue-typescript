@@ -10,4 +10,8 @@ export class UserService {
 
     return resposne;
   }
+
+  public logout() {
+    // call api logout
+  }
 }
