@@ -11,15 +11,15 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import { USER } from "@/store/type";
-import { Action } from "vuex-class";
+<script lang='ts'>
+import { Component, Vue } from 'vue-property-decorator';
+import { USER } from '@/store/type';
+import { Action } from 'vuex-class';
 
-const namespace: string = "user";
+const namespace: string = 'user';
 
 @Component({
-  name: "default-layout"
+  name: 'default-layout',
 })
 export default class DefaultLayout extends Vue {
   @Action(USER.USER_LOGOUT, { namespace }) public userLogout: any;

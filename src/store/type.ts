@@ -5,7 +5,7 @@ export const USER = {
     LOGIN_SUCCESS: 'loginSuccess',
     IS_LOGIN: 'isLogin',
     USER_LOGOUT: 'userLogout',
-    LOGOUT_SUCCESS: 'logoutSuccess'
+    LOGOUT_SUCCESS: 'logoutSuccess',
 };
 
 export const userNameSpace = namespace('user');

@@ -7,8 +7,8 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Watch } from "vue-property-decorator";
-import { Utils } from "@/utils";
+import { Component, Vue, Watch } from 'vue-property-decorator';
+import { Utils } from '@/utils';
 
 const utils = new Utils();
 
@@ -16,7 +16,7 @@ const utils = new Utils();
 export default class App extends Vue {
   get layout() {
     const layout = utils.getLayout(this.$router);
-    return ((this.$route.meta as any).layout || layout) + "-layout";
+    return ((this.$route.meta as any).layout || layout) + '-layout';
   }
 }
 </script>
